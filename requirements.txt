@@ -1,0 +1,11 @@
+torch>=1.9.0
+torchvision>=0.10.0
+numpy
+opencv-python
+pillow
+matplotlib
+google-colab
+gdown
+segment-anything@git+https://github.com/facebookresearch/segment-anything.git
+detectron2@git+https://github.com/facebookresearch/detectron2.git
+fairscale
