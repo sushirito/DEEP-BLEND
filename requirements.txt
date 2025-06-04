@@ -12,6 +12,18 @@ fairscale
 scikit-learn
 pandas
 
+# SULE (CycleGAN)
 tensorflow>=2.8.0
 tensorflow-datasets
 git+https://github.com/tensorflow/examples.git
+
+# Metrics/Evaluation
+torchmetrics[image]
+piq
+pytorch-fid
+scikit-image
+brisque
+pandas
+opencv-python-headless
+scipy
+tqdm
