@@ -15,6 +15,7 @@ Macroplastics in waterways pose significant environmental and health risks, yet 
 
 Together, RMOC + SULE generate diverse, labeled synthetic images that can be used to train object detectors, segmentation networks, and other downstream models for marine pollution research.
 
+
 ---
 
 ## Project Structure
@@ -311,6 +312,40 @@ python -m src.metrics.clip_iqa \
     * `outputs/metrics/niqe_brisque/`
     * `outputs/metrics/clip_iqa/`
 * **`checkpoints/train/`** (created automatically by SULE): Stores CycleGAN weights.
+
+---
+
+## Acknowledgements
+
+This project builds on several foundational works and open-source contributions:
+
+* **CycleGAN training and inference code** was adapted from the [TensorFlow CycleGAN Tutorial](https://www.tensorflow.org/tutorials/generative/cyclegan), available at [`tensorflow/docs`](https://github.com/tensorflow/docs/blob/master/site/en/tutorials/generative/cyclegan.ipynb). We modified the code to suit the underwater translation needs of SULE.
+
+* **FOPA (Fast Object Placement Assessment)** was implemented based on the original algorithm described by Niu et al.:
+
+  ```bibtex
+  @article{niu2022fast,
+    title={Fast Object Placement Assessment},
+    author={Niu, Li and Liu, Qingyang and Liu, Zhenchen and Li, Jiangtong},
+    journal={arXiv preprint arXiv:2205.14280},
+    year={2022}
+  }
+  ```
+
+* **MatteAnything**, used for high-quality alpha matting, was integrated from the work of Yao et al.:
+
+  ```bibtex
+  @article{yao2024matte,
+    title={Matte anything: Interactive natural image matting with segment anything model},
+    author={Yao, Jingfeng and Wang, Xinggang and Ye, Lang and Liu, Wenyu},
+    journal={Image and Vision Computing},
+    pages={105067},
+    year={2024},
+    publisher={Elsevier}
+  }
+  ```
+
+We thank the authors of these works for making their research and code available to the community. Additional attributions are provided in our paper.
 
 ---
 
