@@ -9,3 +9,9 @@ gdown
 segment-anything@git+https://github.com/facebookresearch/segment-anything.git
 detectron2@git+https://github.com/facebookresearch/detectron2.git
 fairscale
+scikit-learn
+pandas
+
+tensorflow>=2.8.0
+tensorflow-datasets
+git+https://github.com/tensorflow/examples.git

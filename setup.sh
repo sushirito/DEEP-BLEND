@@ -1,3 +1,11 @@
+#SULE dependencies
+
+pip install tensorflow>=2.8.0
+pip install tensorflow-datasets
+pip install git+https://github.com/tensorflow/examples.git
+pip install scikit-learn
+pip install pandas
+
 # Clone + prep Matte-Anything
 git clone https://github.com/hustvl/Matte-Anything.git
 cd Matte-Anything
