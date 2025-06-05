@@ -1,4 +1,4 @@
-# DEEP-BLEND
+# DEEP_BLEND
 
 ## Overview
 Macroplastics in waterways pose significant environmental and health risks, yet traditional deep-sea image data collection is prohibitively expensive, time-consuming, and geographically limited. To address these challenges, DEEP-BLEND offers a two-part pipeline for generating high-fidelity synthetic underwater pollution imagery. It integrates Realistic Multi-Object Composition (RMOC) to create lifelike composites of marine plastic debris and Simulating Underwater Lighting Effects (SULE)—an unpaired image-to-image translation network that adds realistic underwater lighting, color distortion, and blur. This synthetic dataset enables large-scale training and evaluation of pollution detection algorithms, bolsters environmental monitoring, and advances research on the impact of marine debris. The end-to-end system yields two key contributions:
@@ -21,7 +21,7 @@ Together, RMOC + SULE generate diverse, labeled synthetic images that can be use
 ## Project Structure
 
 ```
-DEEP-BLEND/                            
+DEEP_BLEND/                            
 ├── inputs/                        ← User-provided images
 │   ├── backgrounds/               ← RMOC: marine background images
 │   ├── foregrounds/               ← RMOC: terrestrial plastic images
@@ -85,8 +85,8 @@ DEEP-BLEND/
 1. **Clone the repository** and enter its root directory:
 
    ```bash
-   git clone https://github.com/YourUsername/MyRepo.git
-   cd MyRepo
+   git clone https://github.com/sushirito/DEEP_BLEND.git
+   cd DEEP_BLEND
    chmod +x setup.sh
    ```
 
@@ -351,7 +351,7 @@ We thank the authors of these works for making their research and code available
 
 ## Citation
 
-If you use DEEP-BLEND, please cite:
+If you use DEEP_BLEND, please cite:
 
 ```bibtex
 @inproceedings{shivakumar2024deep,
