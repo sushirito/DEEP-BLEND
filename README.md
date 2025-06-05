@@ -1,5 +1,9 @@
 # DEEP_BLEND
 
+## Publication
+
+View the original publication in [IEEE MIT Undergraduate Research Technology Conference (URTC) 2024](https://ieeexplore.ieee.org/abstract/document/10937584) for more information.
+
 ## Overview
 
 Macroplastics in waterways pose significant environmental and health risks, yet traditional deep-sea image data collection is prohibitively expensive, time-consuming, and geographically limited. To address these challenges, DEEP-BLEND offers a two-part pipeline for generating high-fidelity synthetic underwater pollution imagery. It integrates Realistic Multi-Object Composition (RMOC) to create lifelike composites of marine plastic debris and Simulating Underwater Lighting Effects (SULE)—an unpaired image-to-image translation network that adds realistic underwater lighting, color distortion, and blur. This synthetic dataset enables large-scale training and evaluation of pollution detection algorithms, bolsters environmental monitoring, and advances research on the impact of marine debris. The end-to-end system yields two key contributions:
