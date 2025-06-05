@@ -1,20 +1,26 @@
 # DEEP_BLEND
 
 ## Overview
+
 Macroplastics in waterways pose significant environmental and health risks, yet traditional deep-sea image data collection is prohibitively expensive, time-consuming, and geographically limited. To address these challenges, DEEP-BLEND offers a two-part pipeline for generating high-fidelity synthetic underwater pollution imagery. It integrates Realistic Multi-Object Composition (RMOC) to create lifelike composites of marine plastic debris and Simulating Underwater Lighting Effects (SULE)—an unpaired image-to-image translation network that adds realistic underwater lighting, color distortion, and blur. This synthetic dataset enables large-scale training and evaluation of pollution detection algorithms, bolsters environmental monitoring, and advances research on the impact of marine debris. The end-to-end system yields two key contributions:
+
+![**Fig. 1**. DEEP-BLEND Pipeline: Mask and trimap extraction are performed for multiple terrestrial plastic objects, which are then realistically blended with diverse marine backgrounds using FOPA, generating plausible pollution scenes.](paper_images/fig1_rmoc_pipeline.png)
 
 1. **RMOC (Realistic Multi-Object Composition)**
 
    * Integrates state-of-the-art matting (SAM + ViTMatte + GroundingDINO) with FOPA (Fast Object Placement Assessment) to composite multiple terrestrial plastic objects seamlessly onto underwater backgrounds.
    * Produces anatomically and contextually plausible pollution scenes, addressing the scarcity of labeled underwater pollution data.
 
+![**Fig. 2**. CycleGAN Translations: SULE is trained on unpaired terrestrial and underwater domains from the LSUI dataset, learning to transform composites into realistic underwater scenes.](paper_images/fig2_cyclegan_transforms.png)
+
 2. **SULE (Simulating Underwater Lighting Effects)**
 
    * Trains a CycleGAN on the LSUI dataset to learn unpaired mappings between terrestrial composites and authentic underwater imagery.
    * Applies realistic color attenuation, scattering, and blur to RMOC outputs, yielding final images that closely resemble true underwater photographs.
 
-Together, RMOC + SULE generate diverse, labeled synthetic images that can be used to train object detectors, segmentation networks, and other downstream models for marine pollution research.
+![**Fig. 3**. SULE Enhancement: Example of an RMOC composite transformed by SULE into a visually realistic underwater image.](paper_images/fig3_sule_outputs.png)
 
+Together, RMOC + SULE generate diverse, labeled synthetic images that can be used to train object detectors, segmentation networks, and other downstream models for marine pollution research.
 
 ---
 
@@ -42,8 +48,11 @@ DEEP_BLEND/
 │   └── metrics/                   ← Evaluation metric outputs (CSV files)
 │       ├── fid_ssim_psnr/         
 │       ├── niqe_brisque/          
-│       └── clip_iqa/              
-│
+│       └── clip_iqa/ 
+├── paper_images/                  ← Figures for documentation and paper
+│   ├── fig1_rmoc_pipeline.png     ← RMOC pipeline visualization
+│   ├── fig2_cyclegan_transforms.png ← CycleGAN training transformations
+│   └── fig3_sule_outputs.png      ← SULE output enhancements             
 ├── requirements.txt               ← All Python dependencies
 ├── setup.sh                       ← Shell script to install and clone repos
 │
@@ -74,6 +83,7 @@ DEEP_BLEND/
         ├── fid_ssim_psnr.py       ← Compute FID, SSIM, PSNR between two folders
         ├── niqe_brisque.py        ← Compute NIQE & BRISQUE on paired folders
         └── clip_iqa.py            ← Compute CLIP-IQA prompt-based scores
+    
 ```
 
 ---
