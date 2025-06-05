@@ -124,7 +124,13 @@ DEEP_BLEND/
 
 **Purpose**: Composite multiple plastic objects realistically onto a marine background.
 
-1. **Place Inputs**:
+1. **Download Input Images**:
+
+   You can download a set of sample terrestrial plastic object images and marine background scenes from the following shared folder:
+
+   [Download RMOC image assets from Google Drive](https://drive.google.com/drive/folders/1qS9p2l81eQkJ_ViaLjAydmpGO0os_zY0?usp=sharing)
+
+   Once downloaded, place the images into the following directories:
 
    * Marine background images → `inputs/backgrounds/`
    * Terrestrial plastic images → `inputs/foregrounds/`
@@ -158,12 +164,15 @@ DEEP_BLEND/
 
 #### 3.1 Dataset Preparation
 
-1. **Download/add LSUI** unpaired dataset:
+To train the SULE module, you'll need an unpaired dataset of terrestrial and underwater images. We use the publicly available **LSUI dataset**, which you can download from:
 
+[LSUI Dataset on Papers With Code](https://paperswithcode.com/dataset/lsui)
+
+After downloading, organize the dataset as follows:
    * Underwater domain (GT) → `inputs/cyclegan/LSUI/GT/`
    * Terrestrial domain (input) → `inputs/cyclegan/LSUI/input/`
 
-2. Verify that each folder contains `.png` or `.jpg` images (no subfolders).
+Verify that each folder contains `.png` or `.jpg` images (no subfolders).
 
 #### 3.2 Training CycleGAN
 
@@ -238,7 +247,7 @@ python -m src.metrics.fid_ssim_psnr \
   outputs/metrics/fid_ssim_psnr/fid_ssim_psnr.csv
   ```
 
-  Contains:
+  Contains (example values):
 
   ```
   Metric,Value
@@ -270,7 +279,7 @@ python -m src.metrics.niqe_brisque \
   outputs/metrics/niqe_brisque/niqe_brisque.csv
   ```
 
-  Contains columns:
+  Contains columns (example values):
 
   ```
   Filename,NIQE_Folder1,NIQE_Folder2,BRISQUE_Folder1,BRISQUE_Folder2
